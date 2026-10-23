@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ぬるぬる図鑑 - ぬるぬるキャッチャー連動コレクション</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">
+        <a href="index.html">
+          <span>💧 ぬるぬる図鑑</span>
+          <span class="title-badge">公式</span>
+        </a>
+      </h1>
+      <p class="site-subtitle">クレーンゲーム「ぬるぬるキャッチャー」連動図鑑</p>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="main-container">
+
+    <!-- 種類コンプリート進捗 -->
+    <section class="progress-panel" aria-label="図鑑コンプリート進捗">
+      <div class="progress-header">
+        <h2 class="progress-title">🏆 種類コンプリート数</h2>
+        <div class="progress-score" id="progressScore">0 / 10</div>
+      </div>
+      <div class="progress-bar-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" id="progressBarContainer">
+        <div class="progress-bar-fill" id="progressBarFill"></div>
+      </div>
+      <p class="progress-note">※全10種類（オクラ / かえる / かたつむり / 眼球 / せっけん / たこ / たまご / スライム / うなぎ / 人間）。同じ種類の別個体を登録しても種類数は増えません。</p>
+    </section>
+
+    <!-- コレクション一覧 -->
+    <section>
+      <h2 class="section-title">マイコレクション一覧</h2>
+
+      <!-- 獲得個体グリッド -->
+      <div class="collection-grid" id="collectionGrid"></div>
+
+      <!-- 未獲得（0件）時の案内エリア -->
+      <div class="empty-box" id="emptyState" style="display: none;">
+        <div class="empty-icon">🎮</div>
+        <h3 class="empty-title">まだ図鑑に登録されていません</h3>
+        <p class="empty-text">クレーンゲームで獲得した景品のQRコードをスマートフォンで読み込んで、個体ページから「図鑑に登録！」ボタンを押してください！</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <p>&copy; ぬるぬるキャッチャー製作委員会 / ぬるぬる図鑑</p>
+    <button type="button" class="footer-reset-btn" id="resetDataBtn">図鑑データを初期化（テスト用）</button>
+  </footer>
+
+  <!-- スクリプトの読み込み順序：データ → ロジック -->
+  <script src="creatures.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

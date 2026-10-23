@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個体詳細 - ぬるぬる図鑑</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">
+        <a href="index.html">
+          <span>💧 ぬるぬる図鑑</span>
+          <span class="title-badge">公式</span>
+        </a>
+      </h1>
+      <p class="site-subtitle">クレーンゲーム「ぬるぬるキャッチャー」景品連動</p>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="main-container">
+
+    <!-- 正常表示エリア（JSで制御） -->
+    <div id="creatureDetail" class="detail-card" style="display: none;">
+      <!-- 画像エリア -->
+      <div class="detail-img-container" id="detailImgWrap">
+        <span class="detail-id-badge" id="creatureIdBadge">ID: ---</span>
+        <img src="" alt="" id="creatureImg" class="detail-img">
+      </div>
+
+      <!-- 詳細情報エリア -->
+      <div class="detail-body">
+        <div class="detail-header">
+          <h2 class="detail-name" id="creatureName">---</h2>
+          <div class="detail-badges">
+            <span class="badge-category" id="creatureCategory">---</span>
+            <span class="badge-slimy" id="creatureSlimy">---</span>
+          </div>
+        </div>
+
+        <!-- 登録完了メッセージ（登録直後に表示） -->
+        <div id="registerSuccessBanner" class="register-success-banner" style="display: none;">
+          🎉 図鑑に新しく登録されました！
+        </div>
+
+        <table class="detail-table">
+          <tbody>
+            <tr>
+              <th>個体ID</th>
+              <td id="creatureIdText">---</td>
+            </tr>
+            <tr>
+              <th>種類名</th>
+              <td id="creatureCategoryText">---</td>
+            </tr>
+            <tr>
+              <th>ぬるぬる度</th>
+              <td id="creatureSlimyText">---</td>
+            </tr>
+            <tr>
+              <th>サイズ</th>
+              <td id="creatureSize">---</td>
+            </tr>
+            <tr>
+              <th>性格</th>
+              <td id="creaturePersonality">---</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- アクションボタン -->
+        <div class="detail-actions">
+          <button type="button" id="registerBtn" class="btn btn-register">
+            図鑑に登録！
+          </button>
+          <a href="index.html" class="btn btn-back">
+            図鑑トップへ戻る
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- エラー表示エリア（存在しないID等の場合に表示） -->
+    <div id="errorView" class="error-card" style="display: none;">
+      <div class="error-icon">🔍💦</div>
+      <h2 class="error-title">個体が見つかりません</h2>
+      <p class="error-text" id="errorMessage">指定された個体IDは登録されていないか、URLが正しくありません。</p>
+      <a href="index.html" class="btn btn-back">図鑑トップへ戻る</a>
+    </div>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <p>&copy; ぬるぬるキャッチャー製作委員会 / ぬるぬる図鑑</p>
+  </footer>
+
+  <!-- スクリプトの読み込み順序：データ → ロジック -->
+  <script src="creatures.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
